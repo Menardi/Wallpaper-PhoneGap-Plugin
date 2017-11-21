@@ -1,0 +1,16 @@
+{
+  "name": "ca.purplemad.wallpaper",
+  "version": "0.2.0",
+  "description": "Wallpaper plugin for Cordova",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Menardi/Wallpaper-PhoneGap-Plugin.git"
+  },
+  "keywords": [
+    "cordova"
+  ],
+  "bugs": {
+    "url": "https://github.com/Menardi/Wallpaper-PhoneGap-Plugin/issues"
+  },
+  "homepage": "https://github.com/Menardi/Wallpaper-PhoneGap-Plugin#readme"
+}
