@@ -32,13 +32,6 @@ User need to pass parameters as (imagePath, imageTitle, folderName, success, err
 
 * Tested on Android >= 4.
 
-### FirefoxOS
-FirefoxOS supports a subset of the Android features, namely the ability to set the wallpaper, but not saving the image locally. Calling wallpaper.setImage will bring up FirefoxOS's "Share" prompt, where the user can then select to "share to wallpaper".
-
-Usage is the same as with Android above, except imageTitle and folderName are ignored.
-
-Note: You will not be able to use images from a remote URL unless the server has the correct CORS headers set. See the MDN article on [CORS Enabled Images](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_enabled_image) for information on how you can do this.
-
 ## 2. Installation
 
 ### Automatically (CLI / Plugman)

@@ -31,12 +31,4 @@
         </config-file>
         <source-file src="src/android/Wallpaper.java" target-dir="src/ca/purplemad/wallpaper" />
     </platform>
-    <platform name="firefoxos">
-        <js-module src="www/wallpaper.js" name="wallpaper">
-            <clobbers target="wallpaper" />
-        </js-module>
-        <js-module src="src/firefoxos/wallpaper.js" name="Wallpaper">
-            <merges target="" />
-        </js-module>
-    </platform>
 </plugin>
