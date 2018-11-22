@@ -1,6 +1,6 @@
 {
-  "name": "ca.purplemad.wallpaper",
-  "version": "0.2.0",
+  "name": "com.syncostyle.plugins.wallpaper",
+  "version": "1.0.0",
   "description": "Wallpaper plugin for Cordova",
   "repository": {
     "type": "git",
