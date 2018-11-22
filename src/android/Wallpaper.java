@@ -70,14 +70,21 @@ public class Wallpaper extends CordovaPlugin
                 }
             }
             else{
+                InputStream ins;
+
+                if(path.startsWith("file:///android_asset/")) {
+                    String relativePath = path.replace("file:///android_asset/", "");
+                    ins = this.cordova.getActivity().getApplicationContext().getAssets().open(relativePath);
+                } else {
+                    ins = new URL(path).openStream();
+                }
+
                 if (SET_WALLPAPER.equals(action)) {
-                    InputStream ins = this.cordova.getActivity().getApplicationContext().getAssets().open(path);
                     wallpaperManager.setStream(ins);
                     callbackContext.success();
                     return true;
                 }
                 else if(SAVE_WALLPAPER.equals(action)){
-                    InputStream ins = this.cordova.getActivity().getApplicationContext().getAssets().open(path);
                     if(saveLocalImage(direct,ins,imageTitle)){
                         callbackContext.success();
                         return true;
@@ -157,4 +164,3 @@ public class Wallpaper extends CordovaPlugin
         }
     }
 }
-
