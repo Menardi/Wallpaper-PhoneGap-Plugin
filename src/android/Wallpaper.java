@@ -8,12 +8,12 @@ import org.apache.cordova.CordovaPlugin;
 import org.json.JSONObject;
 import org.json.JSONArray;
 import android.app.WallpaperManager;
+import android.os.Build;
 
 
 public class Wallpaper extends CordovaPlugin
 {
     public static final String SET_WALLPAPER = "setwallpaper";
-
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) {
@@ -34,7 +34,12 @@ public class Wallpaper extends CordovaPlugin
                     ins = new URL(path).openStream();
                 }
 
-                wallpaperManager.setStream(ins);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                    wallpaperManager.setStream(ins, null, false, WallpaperManager.FLAG_SYSTEM | WallpaperManager.FLAG_LOCK);
+                } else {
+                    wallpaperManager.setStream(ins);
+                }
+
                 callbackContext.success();
                 return true;
             } else {
